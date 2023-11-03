@@ -1,0 +1,43 @@
+header.navbar.navbar-expand-lg.bd-navbar.sticky-top
+  nav.container-xxl.gx-5
+    span.d-lg-none
+
+    a.navbar-brand.p-0.me-0.me-lg-2.lh-1 href="/" title="CardBoard" aria-label="CardBoard"
+      i.bi.bi-kanban-fill.fs-1
+
+    button.navbar-toggler type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
+      i.bi.bi-three-dots.fs-3
+
+    #offcanvasNavbar.offcanvas-lg.offcanvas-end.flex-grow-1 tabindex="-1" aria-labelledby="offcanvasNavbarLabel"
+      .offcanvas-header.px-4.pb-0
+        h5#offcanvasNavbarLabel.offcanvas-title.text-white CardBoard
+        button.btn-close.btn-close-white type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar" aria-label="Close"
+
+      .offcanvas-body.p-4.pt-0.p-lg-0.align-items-center
+        hr.d-lg-none.text-white-50
+
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link.active aria-current="page" href="/" Home
+          li.nav-item
+            a.nav-link href="#" Cards
+
+        hr.d-lg-none.text-white-50
+
+        ul.navbar-nav.ms-md-auto.align-items-lg-center
+          li.nav-item.col-6.col-lg-auto
+            a.nav-link.py-2.px-0.px-lg-2 href="https://github.com/twbs" target="_blank" rel="noopener"
+              i.bi.bi-github
+              small.d-lg-none.ms-2 GitHub
+
+          li.nav-item.py-2.py-lg-1.col-12.col-lg-auto.align-self-stretch
+            .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
+            hr.d-lg-none.my-2.text-white-50
+
+          = render "layouts/theme_switcher"
+
+          li.nav-item.py-2.py-lg-1.col-12.col-lg-auto.align-self-stretch
+            .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
+            hr.d-lg-none.my-2.text-white-50
+
+          = render "layouts/user_menu"

@@ -1,0 +1,29 @@
+li.nav-item.dropdown data-controller="theme"
+  button.btn.btn-link.nav-link.py-2.px-0.px-lg-2.dropdown-toggle.d-flex.align-items-center[
+         id="bd-theme"
+         type="button"
+         aria-expanded="false"
+         data-bs-toggle="dropdown"
+         data-bs-display="static"
+         aria-label="Toggle theme (auto)"]
+    i.bi.bi-circle-half.theme-icon-active
+    span#bd-theme-text.d-lg-none.ms-2 Toggle theme
+
+  ul.dropdown-menu.dropdown-menu-end aria-labelledby="bd-theme-text"
+    li
+      button.dropdown-item.d-flex.align-items-center type="button" data-action="click->theme#switch" data-theme-value="light" data-theme-icon="bi-sun-fill" aria-pressed="false"
+        i.bi.bi-sun-fill.me-2.opacity-50.theme-icon
+        | Light
+        i.bi.bi-check2.ms-auto.d-none
+
+    li
+      button.dropdown-item.d-flex.align-items-center type="button" data-action="click->theme#switch" data-theme-value="dark" data-theme-icon="bi-moon-stars-fill" aria-pressed="false"
+        i.bi.bi-moon-stars-fill.me-2.opacity-50.theme-icon
+        | Dark
+        i.bi.bi-check2.ms-auto.d-none
+
+    li
+      button.dropdown-item.d-flex.align-items-center.active type="button" data-action="click->theme#switch" data-theme-value="auto" data-theme-icon="bi-circle-half" aria-pressed="false"
+        i.bi.bi-circle-half.me-2.opacity-50.theme-icon
+        | Auto
+        i.bi.bi-check2.ms-auto.d-none

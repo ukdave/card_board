@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title CardBoard
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    javascript:
+      let theme = window.localStorage.getItem("theme");
+      if (theme == null || theme === "auto") {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-bs-theme", theme);
+
+  body
+    = render "layouts/header"
+    .container-xxl.gx-5.mt-3.my-md-4
+      = yield
+    = render "layouts/footer"
