@@ -12,6 +12,7 @@ task(:slim_lint_announce) { RakeNBake::Baker.log_step("Running Slim Lint") }
 task default: %w[
   standard
   slim_lint
+  bake:rspec
   bake:brakeman
   bake:rails_best_practices
   bake:bundle-audit
