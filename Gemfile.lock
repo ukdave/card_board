@@ -74,12 +74,19 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    ast (2.4.2)
     base64 (0.1.1)
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    brakeman (6.0.1)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
+    code_analyzer (0.5.5)
+      sexp_processor
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -92,6 +99,7 @@ GEM
     drb (2.1.1)
       ruby2_keywords
     erubi (1.12.0)
+    erubis (2.7.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -107,6 +115,9 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.6.3)
+    language_server-protocol (3.17.0.3)
+    lint_roller (1.1.0)
     loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -134,6 +145,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    parallel (1.23.0)
+    parser (3.2.2.4)
+      ast (~> 2.4.1)
+      racc
     propshaft (0.8.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -173,6 +188,14 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_best_practices (1.23.2)
+      activesupport
+      code_analyzer (~> 0.5.5)
+      erubis
+      i18n
+      json
+      require_all (~> 3.0)
+      ruby-progressbar
     railties (7.1.1)
       actionpack (= 7.1.1)
       activesupport (= 7.1.1)
@@ -181,30 +204,84 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
+    rainbow (3.1.1)
     rake (13.1.0)
+    rake-n-bake (3.1.2)
+      rake (>= 11)
+      term-ansicolor (~> 1.3)
     rdoc (6.5.0)
       psych (>= 4.0.0)
+    regexp_parser (2.8.2)
     reline (0.3.9)
       io-console (~> 0.5)
+    require_all (3.0.0)
+    rexml (3.2.6)
+    rubocop (1.56.4)
+      base64 (~> 0.1.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.2.2.3)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.30.0)
+      parser (>= 3.2.1.0)
+    rubocop-performance (1.19.1)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rails (2.20.2)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    sexp_processor (4.17.0)
     slim (5.1.1)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
+    slim_lint (0.24.0)
+      rubocop (>= 1.0, < 2.0)
+      slim (>= 3.0, < 6.0)
     sqlite3 (1.6.7-x86_64-darwin)
     sqlite3 (1.6.7-x86_64-linux)
+    standard (1.31.2)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.56.4)
+      standard-custom (~> 1.0.0)
+      standard-performance (~> 1.2)
+    standard-custom (1.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.50)
+    standard-performance (1.2.1)
+      lint_roller (~> 1.1)
+      rubocop-performance (~> 1.19.1)
+    standard-rails (0.2.0)
+      lint_roller (~> 1.0)
+      rubocop-rails (~> 2.20.2)
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    sync (0.5.0)
     temple (0.10.3)
+    term-ansicolor (1.7.1)
+      tins (~> 1.0)
     thor (1.3.0)
     tilt (2.3.0)
     timeout (0.4.0)
+    tins (1.32.1)
+      sync
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.5.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -222,6 +299,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  brakeman
+  bundler-audit
   cssbundling-rails
   debug
   importmap-rails
@@ -229,8 +308,14 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 7.1.1)
+  rails_best_practices
+  rake-n-bake
+  rubocop
   slim
+  slim_lint
   sqlite3 (~> 1.4)
+  standard
+  standard-rails
   stimulus-rails
   turbo-rails
   tzinfo-data
