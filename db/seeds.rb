@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+env_seed = File.expand_path("#{Rails.env}_seed.rb", __dir__)
+load env_seed if File.exist?(env_seed)
