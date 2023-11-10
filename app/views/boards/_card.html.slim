@@ -1,0 +1,12 @@
+.card.mb-3
+  .card-body
+    p = card.title
+
+    .row.align-items-center
+      .col
+        p.card-text.small.text-body-secondary
+          i.bi.bi-clock>
+          = card.created_at.strftime("%b %e")
+      .col-auto
+        .avatar.avatar-xs data-bs-toggle="tooltip" aria-label="Joe Bloggs" data-bs-title="Joe Bloggs"
+          img.avatar-img.rounded-circle src="https://github.com/mdo.png"

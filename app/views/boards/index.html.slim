@@ -1,0 +1,4 @@
+h1 Boards
+ul
+  - @boards.each do |board|
+    li = link_to(board.name, board_path(board))

@@ -1,0 +1,7 @@
+h1 = @board.name
+
+.container-fluid.board-container
+  .row
+    - @board.columns.each do |column|
+      = render "column", column:
+    = render "add_column"

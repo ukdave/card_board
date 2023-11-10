@@ -1,0 +1,17 @@
+.form-control-flush {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  padding-left: 0;
+  padding-right: 0;
+  resize: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-control-auto {
+  min-height: 0 !important;
+  padding-bottom: 0;
+  padding-top: 0;
+}

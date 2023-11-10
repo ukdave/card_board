@@ -1,0 +1,21 @@
+.board-container {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  padding: 0;
+
+  & > .row {
+    flex-wrap: nowrap;
+
+    & > [class*="col"] {
+      max-width: 375px;
+    }
+  }
+
+  &.container-fluid,
+  &.container-lg,
+  &.container-md,
+  &.container-sm,
+  &.container-xl {
+    min-height: calc(100vh - 129px);
+  }
+}

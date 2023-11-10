@@ -1,0 +1,20 @@
+.avatar {
+  --bs-avatar-size: 3rem;
+  --bs-avatar-title-bg: var(--bs-gray-500);
+  --bs-avatar-title-color: var(--bs-white);
+  display: inline-block;
+  font-size: calc(var(--bs-avatar-size)/3);
+  height: var(--bs-avatar-size);
+  position: relative;
+  width: var(--bs-avatar-size);
+}
+
+.avatar-xs {
+  --bs-avatar-size: 1.625rem;
+}
+
+.avatar-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
