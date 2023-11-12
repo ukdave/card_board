@@ -6,11 +6,9 @@
         a.dropdown-ellipses.dropdown-toggle href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
           i.bi.bi-three-dots-vertical
         .dropdown-menu.dropdown-menu-end
-          a.dropdown-item href="#" Action
-          a.dropdown-item href="#" Another action
-          a.dropdown-item href="#" Something else here
+          = link_to "Delete", column_path(column), class: "dropdown-item", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 
     .card-body
       - column.cards.each do |card|
         = render "card", card:
-      = render "add_card"
+      = render "add_card", column:

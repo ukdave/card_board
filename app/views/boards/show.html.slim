@@ -4,4 +4,4 @@ h1 = @board.name
   .row
     - @board.columns.each do |column|
       = render "column", column:
-    = render "add_column"
+    = render "add_column", board: @board

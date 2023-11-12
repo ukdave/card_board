@@ -1,6 +1,14 @@
 .card.mb-3
   .card-body
-    p = card.title
+    .row
+      .col
+        p = card.title
+      .col-auto
+        .dropdown
+            a.dropdown-ellipses.dropdown-toggle href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              i.bi.bi-three-dots-vertical
+            .dropdown-menu.dropdown-menu-end
+              = link_to "Delete", card_path(card), class: "dropdown-item", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 
     .row.align-items-center
       .col
