@@ -1,21 +1,22 @@
 .board-container {
+  display: flex;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   padding: 0;
 
-  & > .row {
-    flex-wrap: nowrap;
+  .column-container {
+    margin-right: var(--bs-gutter-x);
 
-    & > [class*="col"] {
-      max-width: 375px;
+    &:last-child {
+      margin-right: 0;
     }
-  }
 
-  &.container-fluid,
-  &.container-lg,
-  &.container-md,
-  &.container-sm,
-  &.container-xl {
-    min-height: calc(100vh - 129px);
+    & >.row {
+      flex-wrap: nowrap;
+
+      & > [class*="col"] {
+        width: 375px;
+      }
+    }
   }
 }

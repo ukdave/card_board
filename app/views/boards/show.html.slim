@@ -1,7 +1,10 @@
 h1 = @board.name
 
 .container-fluid.board-container
-  .row
-    - @board.columns.each do |column|
-      = render "column", column:
-    = render "add_column", board: @board
+  .column-container
+    .row data-controller="sortable" data-sortable-group-value="columns" data-sortable-handle-value=".card-header"
+      - @board.columns.each do |column|
+        = render "column", column:
+  .column-container
+    .row
+      = render "add_column", board: @board

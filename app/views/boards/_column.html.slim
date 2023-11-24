@@ -1,4 +1,4 @@
-.col-12
+.col-12 data-sortable-id=column.id
   .card
     .card-header
       h5.card-title.mb-0 = column.name
@@ -9,6 +9,7 @@
           = link_to "Delete", column_path(column), class: "dropdown-item", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 
     .card-body
-      - column.cards.each do |card|
-        = render "card", card:
+      div data-controller="sortable" data-sortable-group-value="cards" data-sortable-column-id=column.id
+        - column.cards.each do |card|
+          = render "card", card:
       = render "add_card", column:
