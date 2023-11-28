@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :boards, only: [:index, :show], shallow: true do
-    resources :columns, only: [:create, :destroy] do
-      resources :cards, only: [:create, :destroy]
+    resources :columns, only: [:create, :update, :destroy] do
+      resources :cards, only: [:create, :update, :destroy]
     end
   end
 end

@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import { Sortable } from "sortablejs";
+import { put } from '@rails/request.js';
 
 export default class extends Controller {
   static values = {
@@ -17,8 +18,16 @@ export default class extends Controller {
   }
 
   onEnd(event) {
-    console.log(event.item.dataset.sortableId, event.to.dataset.sortableColumnId, event.newIndex);
+    let sortableUrl = event.item.dataset.sortableUrl;
+    let params = {
+      column_id: parseInt(event.to.dataset.sortableColumnId, 10),
+      position: event.newIndex + 1
+    };
+
     document.getElementById("sortableDragImage").remove();
+
+    console.log(sortableUrl, params);
+    put(sortableUrl, { body: JSON.stringify(params) });
   }
 
   createDragImage(dataTransfer, dragEl) {
