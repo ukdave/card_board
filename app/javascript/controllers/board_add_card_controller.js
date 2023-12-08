@@ -17,4 +17,9 @@ export default class extends Controller {
     this.buttonTarget.classList.add("d-block");
     this.formTarget.classList.add("d-none");
   }
+
+  reset() {
+    this.formTarget.reset();
+    this.hide();
+  }
 }

@@ -2,8 +2,11 @@ class ColumnsController < ApplicationController
   before_action :set_column, only: %i[update destroy]
 
   def create
-    column = Column.create!(create_params)
-    redirect_to board_path(column.board)
+    @column = Column.create!(create_params)
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to board_path(@column.board) }
+    end
   end
 
   def update
@@ -13,7 +16,10 @@ class ColumnsController < ApplicationController
 
   def destroy
     @column.destroy!
-    redirect_to board_path(@column.board)
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to board_path(@column.board) }
+    end
   end
 
   private

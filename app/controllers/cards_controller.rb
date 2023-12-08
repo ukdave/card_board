@@ -2,8 +2,11 @@ class CardsController < ApplicationController
   before_action :set_card, only: %i[update destroy]
 
   def create
-    card = Card.create!(create_params)
-    redirect_to board_path(card.board)
+    @card = Card.create!(create_params)
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to board_path(@card.board) }
+    end
   end
 
   def update
@@ -13,7 +16,10 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy!
-    redirect_to board_path(@card.board)
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to board_path(@card.board) }
+    end
   end
 
   private

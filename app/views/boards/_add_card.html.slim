@@ -1,7 +1,7 @@
 .card.card-flush.mb-0 data-controller="board-add-card" data-action="keydown.esc->board-add-card#hide"
   .card-body
     button.btn.btn-link.d-block.mx-auto.p-0 type="button" data-board-add-card-target="button" data-action="board-add-card#show" Add Card
-    = form_with model: [column, Card.new], class: "d-none", data: {"board-add-card-target" => "form"} do |f|
+    = form_with model: [column, Card.new], class: "d-none", data: {"board-add-card-target" => "form", "action" => "turbo:submit-end->board-add-card#reset"} do |f|
       .form-group.mb-3
         = f.text_area :title, class: "form-control form-control-flush form-control-auto", placeholder: "Draft your card", data: {"board-add-card-target" => "input"}
       .row.align-items-center
