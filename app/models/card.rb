@@ -6,4 +6,6 @@ class Card < ApplicationRecord
   validates :title, presence: true
 
   delegate :board, to: :column
+
+  broadcasts_to ->(card) { card.board }, inserts_by: :append, target: ->(card) { [card.column, :cards] }
 end

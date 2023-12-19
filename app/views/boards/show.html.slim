@@ -1,5 +1,7 @@
 h1 = @board.name
 
+= turbo_stream_from @board
+
 .container-fluid.board-container
   .column-container
     #columns.row data-controller="sortable" data-sortable-group-value="columns" data-sortable-handle-value=".card-header"
