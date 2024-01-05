@@ -7,5 +7,5 @@ class Card < ApplicationRecord
 
   delegate :board, to: :column
 
-  broadcasts_to ->(card) { card.board }, inserts_by: :append, target: ->(card) { [card.column, :cards] }
+  broadcasts_refreshes_to ->(card) { card.board }
 end

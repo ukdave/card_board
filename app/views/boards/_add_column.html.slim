@@ -1,5 +1,5 @@
 .col-12
-  .card.mb-0 data-controller="board-add-column" data-action="keydown.esc->board-add-column#hide"
+  .card.mb-0 data-controller="board-add-column" data-action="keydown.esc->board-add-column#hide" data-turbo-permanent=""
     .card-body
       button.btn.btn-link.d-block.mx-auto.p-0 type="button" data-board-add-column-target="button" data-action="board-add-column#show" Add list
       = form_with model: [board, Column.new], class: "d-none", data: {"board-add-column-target" => "form", "action" => "turbo:submit-end->board-add-column#reset"} do |f|

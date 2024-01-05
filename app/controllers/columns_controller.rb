@@ -3,23 +3,17 @@ class ColumnsController < ApplicationController
 
   def create
     @column = Column.create!(create_params)
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to board_path(@column.board) }
-    end
+    redirect_to board_path(@column.board)
   end
 
   def update
     @column.update!(update_params)
-    head :no_content
+    redirect_to board_path(@column.board)
   end
 
   def destroy
     @column.destroy!
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to board_path(@column.board) }
-    end
+    redirect_to board_path(@column.board)
   end
 
   private

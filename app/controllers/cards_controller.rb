@@ -3,23 +3,17 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.create!(create_params)
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to board_path(@card.board) }
-    end
+    redirect_to board_path(@card.board)
   end
 
   def update
     @card.update!(update_params)
-    head :no_content
+    redirect_to board_path(@card.board)
   end
 
   def destroy
     @card.destroy!
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to board_path(@card.board) }
-    end
+    redirect_to board_path(@card.board)
   end
 
   private

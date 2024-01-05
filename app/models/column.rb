@@ -6,5 +6,5 @@ class Column < ApplicationRecord
 
   validates :name, presence: true
 
-  broadcasts_to ->(column) { column.board }, inserts_by: :append, target: :columns
+  broadcasts_refreshes_to ->(column) { column.board }
 end
