@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Kanban board like app built using Rails 7.1 and Hotwire. I have been building this app to learn and experiment with
+Hotwire. It is not intended to be a fully functional or complete application.
 
-Things you may want to cover:
+Inspired by [SupeRails](https://www.youtube.com/@SupeRails) episode [Rails 7 #119 Trello Clone. Advanced Drag and Drop Sortable Lists with Hotwire](https://youtu.be/OZWhN4Gtjos).
 
-* Ruby version
+## Installation
 
-* System dependencies
+Install Ruby and NodeJS:
 
-* Configuration
+```bash
+brew install asdf
+asdf plugin add ruby
+asdf plugin add nodejs
+asdf install
+```
 
-* Database creation
+Install gems and Javascript dependencies:
 
-* Database initialization
+```bash
+bundle install
+yarn install
+```
 
-* How to run the test suite
+Initialise database:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle exec rails db:reset db:seed
+```
 
-* Deployment instructions
+Run local server:
 
-* ...
+```bash
+./bin/dev
+```
