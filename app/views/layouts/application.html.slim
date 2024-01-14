@@ -6,10 +6,6 @@ html
     = csrf_meta_tags
     = csp_meta_tag
 
-    meta name="turbo-refresh-method" content="morph"
-    meta name="turbo-refresh-scroll" content="preserve"
-    / = turbo_refreshes_with method: :morph, scroll: :preserve
-
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
     javascript:
@@ -19,6 +15,8 @@ html
       }
       document.documentElement.setAttribute("data-bs-theme", theme);
 
+    = turbo_refreshes_with method: :morph, scroll: :preserve
+    = yield :head
   body
     = render "layouts/header"
     .container-xxl.gx-5.mt-3.my-md-4
