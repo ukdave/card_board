@@ -1,4 +1,7 @@
-# README
+# CardBoard
+
+[![Actions Status](https://github.com/ukdave/card_board/actions/workflows/rubyonrails.yml/badge.svg?branch=main)](https://github.com/ukdave/card_board/actions/workflows/rubyonrails.yml?query=branch%3Amain)
+
 
 A Kanban board like app built using Rails 7.1 and Hotwire. I have been building this app to learn and experiment with
 Hotwire. It is not intended to be a fully functional or complete application.
