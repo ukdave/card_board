@@ -45,15 +45,24 @@ export default class extends Controller {
     // must be "visible", so we position off the side of the screen rather then setting `display: none`
     // or `visibility: hidden`.
 
-    let dragImage = dragEl.cloneNode(true);
+    // Note: applying a CSS transform to the dragged element works fine in Firefox, but for Chrome the transform
+    // must be applied to an inner element otherwise it won't have any effect. So, here we create a new DIV into
+    // which we insert a clone of the dragged element, and then apply the transform (via a CSS class) to the cloned
+    // element. This works in both Firefox and Chrome.
+
+    let dragImage = document.createElement("div");
     dragImage.id = "sortableDragImage";
     dragImage.style.position = "absolute";
     dragImage.style.top = "0px";
     dragImage.style.left = "-1000px";
-    dragImage.style.width = dragEl.clientWidth + "px";
-    dragImage.style.padding = window.getComputedStyle(dragEl, null).getPropertyValue("padding");
-    dragImage.style.opacity = 1;
-    dragImage.classList.add("sortable-drag-image");
+
+    let dragElClone = dragEl.cloneNode(true);
+    dragElClone.style.width = dragEl.clientWidth + "px";
+    dragElClone.style.padding = window.getComputedStyle(dragEl, null).getPropertyValue("padding");
+    dragElClone.style.opacity = 1;
+    dragElClone.classList.add("sortable-drag-image");
+
+    dragImage.appendChild(dragElClone);
     document.body.appendChild(dragImage);
 
     let offsetX = this._lastX - dragEl.getBoundingClientRect().left;
