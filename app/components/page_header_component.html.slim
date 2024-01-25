@@ -1,0 +1,9 @@
+.page-header.mb-5
+  .page-header-body.border-bottom.py-3
+    .row.align-items-center
+      .col
+        - if pretitle
+          h6.page-header-pretitle.mb-0 = pretitle
+        h1.page-header-title.mb-0 = title
+      .col-auto
+        = content
