@@ -1,0 +1,3 @@
+.toast-container.position-fixed.bottom-0.end-0.p-3 aria-live="polite" aria-atomic="true"
+  - flash.each do |type, message|
+    = render FlashMessageComponent.new(type:, message:)

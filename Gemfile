@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 
 gem "acts_as_list"
 gem "slim"
+gem "view_component"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
