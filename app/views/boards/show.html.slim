@@ -1,6 +1,13 @@
 - provide :head, tag.meta(name: "view-transition", content: "same-origin")
 
-= render PageHeaderComponent.new(pretitle: "Boards", title: @board.name)
+= render PageHeaderComponent.new(pretitle: "Boards", title: @board.name) do
+  .dropdown
+    button.btn.btn-outline-secondary.dropdown-toggle type="button" data-bs-toggle="dropdown" aria-expanded="false"
+      | Actions
+    ul.dropdown-menu.dropdown-menu-end
+      li = link_to @board, class: "dropdown-item text-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        i.bi.bi-trash>
+        | Delete this board
 
 = turbo_stream_from @board
 

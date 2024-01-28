@@ -1,0 +1,6 @@
+= form_with model: Board.new, class: "row row-cols-lg-auto mb-3" do |form|
+  .col-12
+    = form.label :name, class: "visually-hidden"
+    = form.text_field :name, placeholder: "Add new board ...", class: "form-control"
+  .col-12
+    = form.submit "Create", class: "btn btn-primary", data: {turbo_submits_with: "Creating..."}
