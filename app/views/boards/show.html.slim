@@ -5,6 +5,9 @@
     button.btn.btn-outline-secondary.dropdown-toggle type="button" data-bs-toggle="dropdown" aria-expanded="false"
       | Actions
     ul.dropdown-menu.dropdown-menu-end
+      li = link_to edit_board_path(@board), class: "dropdown-item"
+        i.bi.bi-pencil>
+        | Edit board details
       li = link_to @board, class: "dropdown-item text-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         i.bi.bi-trash>
         | Delete this board

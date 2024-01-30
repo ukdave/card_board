@@ -1,0 +1,13 @@
+.row.justify-content-center
+  .col-md-4
+    .card
+      = form_with model: @board do |form|
+        .card-header
+          h1.card-title.mb-0 Edit Board
+        .card-body
+          .form-floating.mb-3
+            = form.text_field :name, class: "form-control", placeholder: "Name your board"
+            = form.label :name
+        .card-footer.d-flex.justify-content-end.gap-2
+          = link_to "Cancel", @board, class: "btn btn-secondary"
+          = form.submit "Save Changes", class: "btn btn-primary"

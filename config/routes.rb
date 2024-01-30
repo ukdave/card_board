@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
 
-  resources :boards, only: [:index, :show, :create, :update, :destroy], shallow: true do
+  resources :boards, only: [:index, :show, :edit, :create, :update, :destroy], shallow: true do
     resources :columns, only: [:create, :update, :destroy] do
       resources :cards, only: [:create, :update, :destroy]
     end

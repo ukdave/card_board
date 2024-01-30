@@ -54,20 +54,40 @@ describe "Boards" do
   describe "PUT /board/{id}" do
     let(:board) { Board.create!(name: "Test Board") }
 
-    before do
-      put "/boards/#{board.id}", params: {board: {name: "Some New Name"}}
+    context "when the form is valid" do
+      before do
+        put "/boards/#{board.id}", params: {board: {name: "Some New Name"}}
+      end
+
+      it "updates the name of the board" do
+        expect(board.reload.name).to eq("Some New Name")
+      end
+
+      it "redirects to the board" do
+        expect(response).to redirect_to(board)
+      end
+
+      it "sets a success flash message" do
+        expect(flash[:notice]).to eq "Board was successfully updated."
+      end
     end
 
-    it "updates the name of the board" do
-      expect(board.reload.name).to eq("Some New Name")
-    end
+    context "when the form is not valid" do
+      before do
+        put "/boards/#{board.id}", params: {board: {name: ""}}
+      end
 
-    it "redirects to the board" do
-      expect(response).to redirect_to(board)
-    end
+      it "returns unprocessable_entity http status code" do
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
 
-    it "sets a success flash message" do
-      expect(flash[:notice]).to eq "Board was successfully updated."
+      it "renders the edit page" do
+        expect(response.body).to include("Edit Board")
+      end
+
+      it "sets a failure flash message" do
+        expect(flash.now[:alert]).to eq "Failed to update board."
+      end
     end
   end
 
