@@ -298,7 +298,7 @@ GEM
     timeout (0.4.1)
     tins (1.32.1)
       sync
-    turbo-rails (2.0.0.pre.beta.4)
+    turbo-rails (2.0.0.pre.rc.2)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -346,7 +346,7 @@ DEPENDENCIES
   standard
   standard-rails
   stimulus-rails
-  turbo-rails (= 2.0.0.pre.beta.4)
+  turbo-rails (= 2.0.0.pre.rc.2)
   tzinfo-data
   view_component
   web-console
