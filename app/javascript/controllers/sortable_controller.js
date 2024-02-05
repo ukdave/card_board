@@ -4,13 +4,15 @@ import { Sortable } from "sortablejs";
 export default class extends ApplicationController {
   static values = {
     group: String,
-    handle: String
+    handle: String,
+    filter: String
   }
 
   connect() {
     this.sortable = Sortable.create(this.element, {
       group: this.groupValue,
       handle: this.handleValue,
+      filter: this.filterValue,
       onEnd: this.onEnd.bind(this),
       setData: this.createDragImage
     });

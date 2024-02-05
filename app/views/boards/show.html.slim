@@ -16,7 +16,7 @@
 
 .container-fluid.board-container data-controller="board"
   .column-container
-    #columns.row data-controller="sortable" data-sortable-group-value="columns" data-sortable-handle-value=".card-header"
+    #columns.row data-controller="sortable" data-sortable-group-value="columns" data-sortable-handle-value=".card-header" data-sortable-filter-value=".dropdown"
       - @board.columns.each do |column|
         = render column
   .column-container
