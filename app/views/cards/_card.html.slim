@@ -1,14 +1,19 @@
-.card.mb-3 id=dom_id(card) data-sortable-url=card_path(card)
+.card.mb-3 id=dom_id(card) class="card-colour-#{card.colour}" data-sortable-url=card_path(card) data-controller="card" data-card-colour-value=card.colour
   .card-body
     .row
       .col
         p = card.title
       .col-auto
         .dropdown
-            a.dropdown-ellipses.dropdown-toggle href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              i.bi.bi-three-dots-vertical
-            .dropdown-menu.dropdown-menu-end
-              = link_to "Delete", card_path(card), class: "dropdown-item", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          a.dropdown-ellipses.dropdown-toggle href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            i.bi.bi-three-dots-vertical
+          ul.dropdown-menu.dropdown-menu-end
+            li = link_to "Delete", card_path(card), class: "dropdown-item", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            li: hr.dropdown-divider
+            li
+              .d-flex.flex-wrap.gap-2.px-3
+                - %w[default blue purple pink red orange yellow green teal cyan].each do |colour|
+                  button.btn.p-2 class="card-colour-#{colour}" data-action="card#changeColour" data-card-colour-param=colour
 
     .row.align-items-center
       .col

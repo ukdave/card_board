@@ -27,6 +27,6 @@ class CardsController < ApplicationController
   end
 
   def update_params
-    params.require(:card).permit(:position, :column_id)
+    params.require(:card).permit(:position, :column_id, :colour)
   end
 end

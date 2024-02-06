@@ -10,3 +10,56 @@
     flex: 1;
   }
 }
+
+$card-colours: (
+  "blue":       $blue,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan
+);
+
+.card-colour-default {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-card-border-color);
+
+  &.btn:hover {
+    background-color: shade-color($white, 10%);
+    border-color: var(--bs-card-border-color);
+  }
+}
+
+@each $colour, $value in $card_colours {
+  .card-colour-#{$colour} {
+    background-color: tint-color($value, 80%);
+    border-color: tint-color($value, 60%);
+
+    &.btn:hover {
+      background-color: tint-color($value, 60%);
+      border-color: tint-color($value, 40%);
+    }
+  }
+}
+
+[data-bs-theme="dark"] {
+  .card-colour-default {
+    &.btn:hover {
+      background-color: tint-color($dark, 10%);
+    }
+  }
+
+  @each $colour, $value in $card_colours {
+    .card-colour-#{$colour} {
+      background-color: shade-color($value, 80%);
+      border-color: shade-color($value, 40%);
+      &.btn:hover {
+        background-color: shade-color($value, 60%);
+        border-color: shade-color($value, 20%);
+      }
+    }
+  }
+}
