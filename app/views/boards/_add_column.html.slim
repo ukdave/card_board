@@ -4,5 +4,5 @@
       button.btn.btn-link.d-block.mx-auto.p-0 type="button" data-board-add-column-target="button" data-action="board-add-column#show" Add list
       = form_with model: [board, Column.new], class: "d-none", data: {"board-add-column-target" => "form", "action" => "turbo:submit-end->board-add-column#reset"} do |f|
         .d-flex.align-items-center
-          = f.text_field :name, class: "form-control form-control-flush form-control-auto h5 mb-0", placeholder: "Name your list", data: {"board-add-column-target" => "input"}
+          = f.text_field :name, class: "form-control form-control-flush form-control-auto h5 mb-0", placeholder: "Name your list", data: {"board-add-column-target" => "input"}, required: true
           button.btn-close.ms-3 type="reset" data-action="board-add-column#hide"

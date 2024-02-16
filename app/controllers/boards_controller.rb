@@ -2,6 +2,7 @@ class BoardsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
 
   def index
+    @board = Board.new
     @boards = Board.all
   end
 
@@ -12,8 +13,13 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.create!(board_params)
-    redirect_to board_path(@board), notice: "Board was successfully created."
+    @board = Board.new(board_params)
+    if @board.save
+      redirect_to board_path(@board), notice: "Board was successfully created."
+    else
+      @boards = Board.all
+      render_with_flash :index, status: :unprocessable_entity, alert: "Failed to create board."
+    end
   end
 
   def update
