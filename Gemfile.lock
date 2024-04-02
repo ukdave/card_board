@@ -214,7 +214,7 @@ GEM
     rake-n-bake (3.1.2)
       rake (>= 11)
       term-ansicolor (~> 1.3)
-    rdoc (6.6.2)
+    rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
     reline (0.4.3)
