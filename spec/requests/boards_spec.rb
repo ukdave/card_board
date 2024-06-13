@@ -77,8 +77,8 @@ describe "Boards" do
         put "/boards/#{board.id}", params: {board: {name: ""}}
       end
 
-      it "returns unprocessable_entity http status code" do
-        expect(response).to have_http_status(:unprocessable_entity)
+      it "returns unprocessable_content http status code" do
+        expect(response).to have_http_status(:unprocessable_content)
       end
 
       it "renders the edit page" do
