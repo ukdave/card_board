@@ -7,7 +7,7 @@ class Card < ApplicationRecord
 
   delegate :board, to: :column
 
-  enum colour: {
+  enum :colour, {
     default: 0,
     blue: 1,
     purple: 2,
@@ -18,5 +18,5 @@ class Card < ApplicationRecord
     green: 7,
     teal: 8,
     cyan: 9
-  }, _prefix: true
+  }, prefix: true
 end
