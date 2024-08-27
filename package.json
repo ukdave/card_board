@@ -9,7 +9,7 @@
     "nodemon": "^3.1.4",
     "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.77.8"
+    "sass": "=1.77.6"
   },
   "scripts": {
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
