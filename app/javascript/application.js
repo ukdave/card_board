@@ -2,6 +2,10 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "bootstrap"
+import LocalTime from "local-time"
+
+LocalTime.config.useFormat24 = true;
+LocalTime.start();
 
 document.addEventListener("turbo:load", function(event) {
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');

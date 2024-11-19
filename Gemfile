@@ -48,6 +48,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "acts_as_list"
+gem "local_time"
 gem "slim"
 gem "view_component"
 
