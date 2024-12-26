@@ -1,5 +1,8 @@
 ---
 
+exclude:
+  - vendor/**/*.slim
+
 linters:
   LineLength:
     enabled: false
