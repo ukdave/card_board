@@ -67,6 +67,7 @@ group :development do
   gem "web-console"
 
   gem "bundler-audit", require: false
+  gem "hotwire-spark"
   gem "rake-n-bake"
   gem "rails_best_practices", require: false
   gem "rubocop", require: false

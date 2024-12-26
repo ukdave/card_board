@@ -109,11 +109,17 @@ GEM
     erubis (2.7.0)
     et-orbi (1.2.11)
       tzinfo
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hotwire-spark (0.1.12)
+      listen
+      rails (>= 7.0.0)
+      zeitwerk
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
@@ -141,6 +147,9 @@ GEM
       zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
+    listen (3.9.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     local_time (3.0.2)
     logger (1.6.4)
     loofah (2.23.1)
@@ -241,6 +250,9 @@ GEM
     rake-n-bake (3.1.2)
       rake (>= 11)
       term-ansicolor (~> 1.3)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.11.1)
+      ffi (~> 1.0)
     rdoc (6.10.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.3)
@@ -386,6 +398,7 @@ DEPENDENCIES
   bundler-audit
   cssbundling-rails
   debug
+  hotwire-spark
   importmap-rails
   jbuilder
   kamal
