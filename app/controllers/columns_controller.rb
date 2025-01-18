@@ -19,14 +19,14 @@ class ColumnsController < ApplicationController
   private
 
   def set_column
-    @column = Column.find(params[:id])
+    @column = Column.find(params.expect(:id))
   end
 
   def create_params
-    params.require(:column).permit(:name).merge(board_id: params[:board_id])
+    params.expect(column: [:name]).merge(board_id: params.expect(:board_id))
   end
 
   def update_params
-    params.require(:column).permit(:position)
+    params.expect(column: [:position])
   end
 end

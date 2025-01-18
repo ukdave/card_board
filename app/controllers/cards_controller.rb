@@ -19,14 +19,14 @@ class CardsController < ApplicationController
   private
 
   def set_card
-    @card = Card.find(params[:id])
+    @card = Card.find(params.expect(:id))
   end
 
   def create_params
-    params.require(:card).permit(:title).merge(column_id: params[:column_id])
+    params.expect(card: [:title]).merge(column_id: params.expect(:column_id))
   end
 
   def update_params
-    params.require(:card).permit(:position, :column_id, :colour)
+    params.expect(card: [:position, :column_id, :colour])
   end
 end

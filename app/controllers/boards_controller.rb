@@ -38,10 +38,10 @@ class BoardsController < ApplicationController
   private
 
   def set_project
-    @board = Board.find(params[:id])
+    @board = Board.find(params.expect(:id))
   end
 
   def board_params
-    params.require(:board).permit(:name)
+    params.expect(board: [:name])
   end
 end
