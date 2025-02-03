@@ -46,6 +46,7 @@ gem "thruster", require: false
 
 gem "acts_as_list"
 gem "local_time"
+gem "semantic_release"
 gem "slim"
 gem "view_component"
 
