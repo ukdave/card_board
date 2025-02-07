@@ -303,7 +303,7 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    semantic_release (1.1.0)
+    semantic_release (1.2.1)
     sexp_processor (4.17.3)
     slim (5.2.1)
       temple (~> 0.10.0)
