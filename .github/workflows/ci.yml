@@ -83,4 +83,4 @@ jobs:
         run: bundle exec rake slim_lint
 
       - name: Rails best practices
-        run: bundle exec rake bake:rails_best_practices
+        run: bundle exec rake rails_best_practices

@@ -46,6 +46,7 @@ gem "thruster", require: false
 
 gem "acts_as_list"
 gem "local_time"
+gem "rake_announcer"
 gem "semantic_release"
 gem "slim"
 gem "view_component"
@@ -69,7 +70,6 @@ group :development do
 
   gem "bundler-audit", require: false
   gem "hotwire-spark"
-  gem "rake-n-bake"
   gem "rails_best_practices", require: false
   gem "rubocop", require: false
   gem "slim_lint", require: false
