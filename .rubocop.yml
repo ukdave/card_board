@@ -2,6 +2,8 @@
 
 require:
   - standard
+
+plugins:
   - standard-custom
   - standard-performance
   - rubocop-rails
