@@ -13,7 +13,7 @@ gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", ">= 2.0.14"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
@@ -30,7 +30,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
 gem "solid_queue"
-gem "solid_cable"
+gem "solid_cable", ">= 3.0.8"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -74,5 +74,5 @@ group :development do
   gem "rubocop", require: false
   gem "slim_lint", require: false
   gem "standard", require: false
-  gem "standard-rails", require: false
+  gem "standard-rails", ">= 1.4.0", require: false
 end
