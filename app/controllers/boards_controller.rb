@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
       redirect_to board_path(@board), notice: "Board was successfully created."
     else
       @boards = Board.all
-      render_with_flash :index, status: :unprocessable_entity, alert: "Failed to create board."
+      render_with_flash :index, status: :unprocessable_content, alert: "Failed to create board."
     end
   end
 
@@ -26,7 +26,7 @@ class BoardsController < ApplicationController
     if @board.update(board_params)
       redirect_to board_path(@board), notice: "Board was successfully updated."
     else
-      render_with_flash :edit, status: :unprocessable_entity, alert: "Failed to update board."
+      render_with_flash :edit, status: :unprocessable_content, alert: "Failed to update board."
     end
   end
 
