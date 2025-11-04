@@ -256,7 +256,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.1)
-    rake_announcer (1.1.0)
+    rake_announcer (1.2.0)
       rake (>= 13)
       term-ansicolor (~> 1.11)
     rb-fsevent (0.11.2)
