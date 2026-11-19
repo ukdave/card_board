@@ -12,26 +12,26 @@
 
 ActiveRecord::Schema[8.1].define(version: 2024_01_31_223204) do
   create_table "boards", force: :cascade do |t|
-    t.datetime "created_at", null: false
     t.string "name", null: false
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "cards", force: :cascade do |t|
-    t.integer "colour", default: 0, null: false
     t.integer "column_id", null: false
-    t.datetime "created_at", null: false
-    t.integer "position", null: false
     t.string "title", null: false
+    t.integer "position", null: false
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "colour", default: 0, null: false
     t.index ["column_id"], name: "index_cards_on_column_id"
   end
 
   create_table "columns", force: :cascade do |t|
     t.integer "board_id", null: false
-    t.datetime "created_at", null: false
     t.string "name", null: false
     t.integer "position", null: false
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_columns_on_board_id"
   end
